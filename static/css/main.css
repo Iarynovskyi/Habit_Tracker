@@ -1,0 +1,145 @@
+::after
+::before{
+    box-sizing: inherit;
+}
+
+body{
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+.header,
+.main{
+   max-width: 40rem;
+    margin: 0 auto;
+    padding: 1rem;
+}
+.header{
+    display: flex;
+    background: #000;
+    color: #fff;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 6px 6px 0px 0px;
+}
+
+.header_link{
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.1s ease-in-out;
+}
+
+.header_link:hover{
+    color: aquamarine;
+}
+.header_logo{
+    margin: 0;
+    font-size: 1.5rem;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.1rem;
+}
+.form_input{
+    padding: 1rem;
+    font-family: inherit;
+    font-size: inherit;
+    resize: none;
+    border: 3px solid #000;
+    border-radius: 6px;
+    background-color: #fafafa;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+}
+
+.form_button
+{
+    font-size: inherit;
+    background: aqua;
+    cursor: pointer;
+    border-radius: 6px;
+    border: none;
+    padding: 0.5rem 2.5rem;
+    align-self: flex-end;
+}
+
+.dates{
+    display: flex;
+    justify-content: space-around;
+    color: black;
+    margin-bottom: 2.1rem;
+    font-size: 1.1rem;
+}
+.dates_link{
+    color: inherit;
+    text-decoration: none;
+    outline: none;
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+}
+.dates_link-current{
+    background: aquamarine;
+}
+.date{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.dates_link:first-of-type,
+.dates_link:last-of-type,
+.dates_link:nth-of-type(2),
+.dates_link:nth-last-of-type(2){
+    display: none;
+}
+@media screen and (min-width: 25rem){
+    .dates_link:nth-of-type(2),
+    .dates_link:nth-last-of-type(2){
+    display: block;
+}
+}
+@media screen and (min-width: 40rem){
+    .dates_link:first-of-type,
+    .dates_link:last-of-type{
+    display: block;
+}
+}
+
+.habit{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 26px;
+    padding: 20px;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 6px;
+}
+.habit:not(.completed){
+    padding: 0;
+
+}
+.habit:not(.completed):hover{
+    background-color: aquamarine;
+}
+.habit_icon{
+    width: 1em;
+    height: 1em;
+}
+.habit_name{
+    margin: 0;
+}
+.habit_form{
+    width: 100%;
+}
+.habit_button{
+    display: block;
+    width: 100%;
+    padding: 20px;
+    font-size: 26px;
+    font-family: inherit;
+    text-align: left;
+    border: none;
+    background: unset;
+    cursor: pointer;
+}
