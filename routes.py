@@ -60,10 +60,5 @@ def complete_habit():
     date_str = request.form.get("date")
     habit = request.form.get("habitId")
     date = datetime.datetime.fromisoformat(date_str)
-
-    try:
-        current_app.db.completions.insert_one({"habitId": habit, "date": date})
-    except Exception as e:
-        print(f"Error completing habit: {e}")  # Add error logging here
-
+    current_app.db.completions.insert_one({"habit": habit, "date": date})
     return redirect(url_for("habits.index", date=date_str))

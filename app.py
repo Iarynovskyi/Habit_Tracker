@@ -8,8 +8,8 @@ load_dotenv()
 
 def create_app():
     app = Flask(__name__)
-    client = MongoClient(os.getenv('MONGO_URI'))
-    app.db = client['Habits']
+    client = MongoClient(os.environ.get('MONGO_URI'))
+    app.db = client.get_default_database()
 
     app.register_blueprint(pages)
 
